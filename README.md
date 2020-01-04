@@ -34,6 +34,33 @@ Several key tools are required to work effectively with NodeJS, this section wil
 
 At this point you should have Homebrew & NodeJS installed. NodeJS should've also installed Node Package Manager (NPM) which is the javascript version of python's PIP.
 
+#### db-migrate
+1. Check to see if you have db-migrate installed.
+`db-migrate -v`
+2. If you do not have db-migrate installed, install it globally with npm.
+`npm install -g db-migrate`
+
+#### PostgreSQL
+1. Check to see if you have postgreSQL install.
+`brew info postgresql`
+2. If you have less than version 12.1, upgrade it with brew.
+`brew upgrade postgresql`
+3. If you upgraded your postgresql version, upgrade the database records and configurations.
+`brew postgresql-upgrade-database`
+3. If you don't have postgresql installed, install it with brew.
+`brew install postgresql`
+4. Start postgresql with pg_ctl
+`pg_ctl -D /usr/local/var/postgres start`
+5. Confirm postgresql is running with ps and grep.
+`ps auxwww | grep postgres`
+One would expect to see a collection of processes running with the name (rightmost column) 'postgres: '
+6. If postgres is running, create the 'cat' database and connect to it.
+`createdb cat`
+`psql cat`
+You should be pulled into the psql command line tool for the recently created 'cat' database. To exit the psql tool type `\q`. For more on PSQL commands, see: https://www.postgresqltutorial.com/postgresql-administration/psql-commands/
+
+At this point you should have a live running postgres instance.
+
 ### Install Runtime Dependencies
 In order to run the app we need to install of the libraries and other bits and bobs that it depends on. The package.json and package-lock.json define what these dependencies are and NPM knows how to read them and install everything required.
 1. cd into the repo's directory on your local
@@ -41,10 +68,31 @@ In order to run the app we need to install of the libraries and other bits and b
 2. Install runtime dependencies with NPM
 `npm install`
 
+### Setup your Database & Schemas
+If you haven't yet setup your database and schemas, please do so. This only needs to be done once per machine.
+1. Create your postgres tensorscripts database.
+`createdb tensorscripts`
+2. Connect to your tensorscripts postgres database with psql
+`psql tensorscripts`
+3. Create your development schema inside the tensorscripts postgres database
+`CREATE SCHEMA development;`
+4. Create your test schema inside the tensorscripts postgres database
+`CREATE SCHEMA test;`
+5. Exit psql
+`\q`
+
+### Setup your database.json file
+In order for db-migrate to connect to the database it must know where it is and what credentials to use. Included in the repository is a file called database.json.sample. 
+1. Make a copy of the database.json.sample file and remove the '.sample'
+`cp database.json.sample database.json`
+
 ### Start the Application
-1. Turn the application on
+1. Start your local postgres instance if it isn't already running. See the above PostgreSQL install steps 5 and 4 for how to do this.
+2. Update the database schema with the latest migrations.
+`db-migrate up`
+3. Turn the application on
 `npm start`
-2. Confirm the application is running by navigating to the below URL in your webbrowser.
+4. Confirm the application is running by navigating to the below URL in your webbrowser.
 `localhost:3000`
 
 ## Running the test suite
