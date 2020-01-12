@@ -40,6 +40,18 @@ At this point you should have Homebrew & NodeJS installed. NodeJS should've also
 2. If you do not have typeorm installed, install it globally with npm.
 `npm install -g typeorm`
 
+#### node-ts
+1. Check to see if you have ts-node installed.
+`npm list ts-node`
+2. If you don't have ts-node installed, install it globally. You may need to use sudo.
+`npm install -g ts-node`
+
+#### typescript
+1. Check to see if you have typescript installed
+`npm list typescript`
+2. If you don't have typescript installed, install it globally. You may ned to use sudo.
+`npm install -g typescript`
+
 #### PostgreSQL
 1. Check to see if you have postgreSQL install.
 `brew info postgresql`
