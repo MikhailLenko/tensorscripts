@@ -34,11 +34,11 @@ Several key tools are required to work effectively with NodeJS, this section wil
 
 At this point you should have Homebrew & NodeJS installed. NodeJS should've also installed Node Package Manager (NPM) which is the javascript version of python's PIP.
 
-#### db-migrate
-1. Check to see if you have db-migrate installed.
-`db-migrate -v`
-2. If you do not have db-migrate installed, install it globally with npm.
-`npm install -g db-migrate`
+#### typeorm
+1. Check to see if you have typeorm installed.
+`typeorm -v`
+2. If you do not have typeorm installed, install it globally with npm.
+`npm install -g typeorm`
 
 #### PostgreSQL
 1. Check to see if you have postgreSQL install.
@@ -81,19 +81,17 @@ If you haven't yet setup your database and schemas, please do so. This only need
 5. Exit psql
 `\q`
 
-### Setup your database.json file
-In order for db-migrate to connect to the database it must know where it is and what credentials to use. Included in the repository is a file called database.json.sample. 
-1. Make a copy of the database.json.sample file and remove the '.sample'
-`cp database.json.sample database.json`
+### Setup your ormconfig.json file
+In order for typeorm to connect to the database it must know where it is and what credentials to use. Included in the repository is a file called ormconfig.json.sample. 
+1. Make a copy of the ormconfig.json.sample file and remove the '.sample'
+`cp ormconfig.json.sample ormconfig.json`
 
 ### Start the Application
 1. Start your local postgres instance if it isn't already running. See the above PostgreSQL install steps 5 and 4 for how to do this.
-2. Update the database schema with the latest migrations.
-`db-migrate up`
 3. Turn the application on
 `npm start`
 4. Confirm the application is running by navigating to the below URL in your webbrowser.
-`localhost:3000`
+`localhost:3000/users`
 
 ## Running the test suite
 ??????????????

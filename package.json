@@ -1,17 +1,20 @@
 {
-  "name": "tensorscripts",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "start": "node ./bin/www"
-  },
-  "dependencies": {
-    "cookie-parser": "~1.4.4",
-    "db-migrate-pg": "^1.0.0",
-    "debug": "~2.6.9",
-    "express": "~4.16.1",
-    "http-errors": "~1.6.3",
-    "jade": "~1.11.0",
-    "morgan": "~1.9.1"
-  }
+   "name": "tensorscripts",
+   "version": "0.0.1",
+   "description": "Awesome project developed with TypeORM.",
+   "devDependencies": {
+      "ts-node": "3.3.0",
+      "@types/node": "^8.0.29",
+      "typescript": "3.3.3333"
+   },
+   "dependencies": {
+      "typeorm": "0.2.22",
+      "reflect-metadata": "^0.1.10",
+      "pg": "^7.3.0",
+      "express": "^4.15.4",
+      "body-parser": "^1.18.1"
+   },
+   "scripts": {
+      "start": "ts-node src/index.ts"
+   }
 }

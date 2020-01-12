@@ -1,1 +1,7 @@
-database.json
+ormconfig.json
+.idea/
+.vscode/
+node_modules/
+build/
+tmp/
+temp/
