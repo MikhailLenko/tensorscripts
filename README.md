@@ -88,9 +88,9 @@ In order for typeorm to connect to the database it must know where it is and wha
 
 ### Start the Application
 1. Start your local postgres instance if it isn't already running. See the above PostgreSQL install steps 5 and 4 for how to do this.
-3. Turn the application on
+2. Turn the application on
 `npm start`
-4. Confirm the application is running by navigating to the below URL in your webbrowser.
+3. Confirm the application is running by navigating to the below URL in your webbrowser.
 `localhost:3000/users`
 
 ## Running the test suite
