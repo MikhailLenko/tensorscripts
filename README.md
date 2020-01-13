@@ -40,11 +40,17 @@ At this point you should have Homebrew & NodeJS installed. NodeJS should've also
 2. If you do not have typeorm installed, install it globally with npm.
 `npm install -g typeorm`
 
-#### node-ts
+#### ts-node
 1. Check to see if you have ts-node installed.
 `npm list ts-node`
 2. If you don't have ts-node installed, install it globally. You may need to use sudo.
 `npm install -g ts-node`
+
+#### ts-lint
+1. Check to see if you have ts-lint installed.
+`npm list ts-lint`
+2. If you don't have ts-lint installed, install it globally. You may need to use sudo.
+`npm install -g ts-lint latest`
 
 #### typescript
 1. Check to see if you have typescript installed
