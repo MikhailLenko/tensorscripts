@@ -1,6 +1,11 @@
 # tensorscripts
 Backend for TensorScripts product
 
+## Documentation
+[Document Hub](https://docs.google.com/document/d/1zlsDXl0WfNfL_DezcsAF-A6BMFYEKxunVIp9T2XXGX4/edit#heading=h.frve1s3as1is)
+[Google Drive](https://drive.google.com/drive/folders/1IgSov_jfTe0SkFCGeS3cx85oKd5xxFbD?usp=sharing)
+[Project Jira](https://tensorscripts.atlassian.net/jira/software/projects/TEN/boards/1)
+
 ## Getting Started
 
 ### Clone the repo
