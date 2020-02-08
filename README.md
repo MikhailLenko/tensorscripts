@@ -111,4 +111,6 @@ In order for typeorm to connect to the database it must know where it is and wha
 `localhost:3000/users`
 
 ## Running the test suite
+1. Run the linter.
+`npm run lint`
 ??????????????
